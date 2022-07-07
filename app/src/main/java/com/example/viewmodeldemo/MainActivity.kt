@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
+
+
         viewModel.count.observe(this, Observer {
             binding.tvCount.text = it.toString()
             if(it > 0){
@@ -27,13 +29,14 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        binding.btIncrement.setOnClickListener {
-            viewModel.incrementCount()
-        }
+        binding.apply {
+            btIncrement.setOnClickListener {
+                viewModel.incrementCount()
+            }
 
-        binding.btDecrement.setOnClickListener {
-            viewModel.decrementCount()
+            btDecrement.setOnClickListener {
+                viewModel.decrementCount()
+            }
         }
-
     }
 }
