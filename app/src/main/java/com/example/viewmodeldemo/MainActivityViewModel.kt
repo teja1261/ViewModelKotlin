@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.util.Log
 
-class MainViewActivity: ViewModel() {
+class MainActivityViewModel: ViewModel() {
     var count = MutableLiveData<Int>()
 
     init {
