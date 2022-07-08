@@ -19,15 +19,17 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
 
+        binding.lifecycleOwner = this
+        binding.myViewModel = viewModel
 
-        viewModel.count.observe(this, Observer {
-            binding.tvCount.text = it.toString()
-            if(it > 0){
-                binding.tvCount.setTextColor(ContextCompat.getColor(this, R.color.green))
-            }else{
-                binding.tvCount.setTextColor(ContextCompat.getColor(this, R.color.red))
-            }
-        })
+//        viewModel.totalCount.observe(this, Observer {
+//            binding.tvCount.text = it.toString()
+//            if(it > 0){
+//                binding.tvCount.setTextColor(ContextCompat.getColor(this, R.color.green))
+//            }else{
+//                binding.tvCount.setTextColor(ContextCompat.getColor(this, R.color.red))
+//            }
+//        })
 
         binding.apply {
             btIncrement.setOnClickListener {
